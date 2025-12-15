@@ -1,1 +1,42 @@
-<h2>Login Page</h2><a href='/signup'>Signup</a>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ChitChat | Login</title>
+    <link rel="stylesheet" th:href="@{/css/instagram.css}">
+</head>
+
+<body class="auth-body">
+
+<div class="auth-container">
+    <div class="auth-card">
+
+        <h2 class="auth-title">Login</h2>
+
+        <form th:action="@{/login}" method="post">
+
+            <input type="text"
+                   name="username"
+                   placeholder="Username"
+                   required />
+
+            <input type="password"
+                   name="password"
+                   placeholder="Password"
+                   required />
+
+            <button type="submit" class="auth-btn">
+                Login
+            </button>
+        </form>
+
+        <p class="auth-switch">
+            Don’t have an account?
+            <a th:href="@{/signup}">Signup</a>
+        </p>
+
+    </div>
+</div>
+
+</body>
+</html>
