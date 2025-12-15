@@ -1,0 +1,3 @@
+com\chitchat\config\PasswordConfig.class
+com\chitchat\ChitChatApplication.class
+com\chitchat\controller\HomeController.class
