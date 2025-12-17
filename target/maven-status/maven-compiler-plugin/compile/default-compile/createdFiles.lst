@@ -1,3 +1,6 @@
 com\chitchat\config\PasswordConfig.class
 com\chitchat\controller\HomeController.class
 com\chitchat\ChitChatApplication.class
+com\chitchat\controller\FeedController.class
+com\chitchat\model\User.class
+com\chitchat\repository\UserRepository.class
