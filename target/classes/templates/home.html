@@ -2,67 +2,34 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>ChitChat</title>
-    <link rel="stylesheet" href="/css/instagram.css">
+    <link rel="stylesheet" th:href="@{/css/instagram.css}">
 </head>
-<body>
 
-<header>
-    <img src="/images/logo.png">
-    <div>
-        <a href="/profile">Profile</a>
-        <a href="/logout">Logout</a>
-    </div>
+<body class="page-bg home-page">
+
+<!-- TOP NAV BAR -->
+<header class="top-bar">
+    <h2 class="logo-text">ChitChat</h2>
 </header>
 
-<div class="container">
-
-    <!-- CREATE POST -->
-    <div class="create-post">
+<!-- CENTER POST INPUT -->
+<main class="home-main">
+    <div class="create-post home-create">
         <form action="/post" method="post">
-            <textarea name="content" rows="2" placeholder="What's on your mind?"></textarea>
+            <textarea name="content"
+                      placeholder="What's on your mind?"></textarea>
             <button type="submit">Post</button>
         </form>
     </div>
+</main>
 
-    <!-- FEED -->
-    <div th:each="post : ${posts}" class="post-card">
-
-        <div class="post-header">
-            @[[${post.user.username}]]
-            <form th:action="@{'/follow/' + ${post.user.id}}"
-                  method="post" style="display:inline;">
-                <button class="follow-btn">Follow</button>
-            </form>
-        </div>
-
-        <div class="post-content">
-            <p>[[${post.content}]]</p>
-        </div>
-
-        <div class="actions">
-            <form th:action="@{'/like/' + ${post.id}}" method="post">
-                <button style="border:none;background:none;">
-                    <img src="/images/like.png">
-                </button>
-            </form>
-
-            <img src="/images/comment.png">
-            <img src="/images/share.png">
-        </div>
-
-        <div class="caption">
-            <b>@[[${post.user.username}]]</b> [[${post.content}]]
-        </div>
-
-        <form th:action="@{'/comment/' + ${post.id}}" method="post"
-              class="comment-box">
-            <input type="text" name="text" placeholder="Add a comment...">
-            <button type="submit">Post</button>
-        </form>
-
-    </div>
-
-</div>
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+    <img src="/images/home.png">
+    <img src="/images/search.png">
+    <img src="/images/add.png">
+    <img src="/images/profile.png">
+</nav>
 
 </body>
 </html>
