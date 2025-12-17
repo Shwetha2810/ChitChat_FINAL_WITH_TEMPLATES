@@ -19,6 +19,18 @@ public class HomeController {
     public String signup() {
         return "signup";
     }
+    
+    @PostMapping("/signup")
+    public String processSignup() {
+        // TODO: persist user details (placeholder)
+        return "redirect:/home";
+    }
+
+    @PostMapping("/login")
+    public String processLogin() {
+        // TODO: authenticate user (placeholder)
+        return "redirect:/home";
+    }
 //  @PostMapping("/signup")
 //     public String processSignup() {
 
